@@ -3,177 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Your Discovery Consultation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --cream: #f5f0eb;
-      --warm-white: #faf7f4;
-      --brown-dark: #5c3317;
-      --brown-mid: #7a4a22;
-      --gold: #c9922a;
-      --gold-light: #e8b96a;
-      --text-body: #3d2b1f;
-      --text-muted: #7a6a5f;
-    }
-
-    html, body {
-      height: 100%;
-      background: var(--cream);
-      font-family: 'Lato', sans-serif;
-      color: var(--text-body);
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding: 40px 20px 60px;
-    }
-
-    /* Subtle grain texture overlay */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .container {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 780px;
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 36px;
-    }
-
-    .header h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      color: var(--brown-dark);
-      text-decoration: underline;
-      text-decoration-color: var(--gold);
-      text-underline-offset: 6px;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-      margin-bottom: 20px;
-    }
-
-    .info-card {
-      background: #fff;
-      border: 1px solid #e8ddd5;
-      border-radius: 8px;
-      padding: 24px 28px;
-      margin-bottom: 32px;
-      box-shadow: 0 2px 12px rgba(92,51,23,0.06);
-    }
-
-    .info-card .meta {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid #f0e8e0;
-    }
-
-    .info-card .meta svg {
-      flex-shrink: 0;
-      margin-top: 1px;
-      opacity: 0.6;
-    }
-
-    .info-card p {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: var(--text-body);
-      margin-bottom: 12px;
-    }
-
-    .info-card p:last-child { margin-bottom: 0; }
-
-    .info-card strong {
-      font-weight: 700;
-      color: var(--brown-dark);
-    }
-
-    /* Gold divider line */
-    .divider {
-      width: 60px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      margin: 0 auto 28px;
-      border-radius: 2px;
-    }
-
-    /* Zoho inline embed wrapper */
-    .booking-wrapper {
-      background: #fff;
-      border-radius: 10px;
-      border: 1px solid #e8ddd5;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(92,51,23,0.08);
-      padding: 8px;
-    }
-
-    #inline-container {
-      width: 100%;
-    }
-
-    .footer-note {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: transparent; }
   </style>
 </head>
 <body>
-  <div class="container">
-
-    <div class="header">
-      <h1>Book Your Discovery<br>Consultation</h1>
-    </div>
-
-    <div class="info-card">
-      <div class="meta">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg>
-        <span>Web conferencing details provided upon confirmation.</span>
-      </div>
-      <p>We will go over your submission of the Chihwa Inquiry form.</p>
-      <p>We'd love the opportunity to better understand <strong>Your Style</strong> &amp; <strong>Your Story</strong> and determine if <strong>Our Design</strong> can help bring your vision to life.</p>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="booking-wrapper">
-      <script src="https://bookings.nimbuspop.com/assets/embed.js"></script>
-      <div id="inline-container"></div>
-      <script>
-        window.onload = function() {
-          Bookings.inlineEmbed({
-            url: "https://chihwaessentials.zohobookings.com/portal-embed#/4760573000000055050",
-            parent: "#inline-container",
-            height: "600px"
-          });
-        };
-      </script>
-    </div>
-
-    <p class="footer-note">Powered by Zoho Bookings · All times shown in your local timezone</p>
-
-  </div>
+  <script src="https://bookings.nimbuspop.com/assets/embed.js"></script>
+  <div id="inline-container"></div>
+  <script>
+    window.onload = function() {
+      Bookings.inlineEmbed({
+        url: "https://chihwaessentials.zohobookings.com/portal-embed#/4760573000000055050",
+        parent: "#inline-container",
+        height: "600px"
+      });
+    };
+  </script>
 </body>
 </html>
